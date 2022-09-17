@@ -1,0 +1,65 @@
+use std::fs;
+use std::fs::File;
+use std::io::{BufReader, BufWriter, Read, Write};
+use clap::Parser;
+
+#[derive(Parser)]
+#[clap(author, version, about, long_about = None)]
+struct Cli {
+    input: String,
+    output: String,
+}
+
+fn main() {
+    let cli: Cli = Cli::parse();
+    let file = File::open(&cli.input).unwrap();
+    let mut file_reader = BufReader::new(file);
+
+    let file_size = fs::metadata(&cli.input).unwrap().len();
+
+    let output_file = File::create(&cli.output).unwrap();
+    let mut output_file_writer = BufWriter::new(output_file);
+
+    let mut buffer = [0; 0x10000];
+
+    let file_size_padding = file_size % 0x10000;
+    let file_size = file_size - file_size_padding;
+
+    for index in (0..file_size).step_by(0x10000) {
+        file_reader.read_exact(&mut buffer).unwrap();
+        let mut vec = buffer.to_vec();
+        decrypt_block(&mut vec, index as u32);
+        output_file_writer.write_all(vec.as_slice()).unwrap();
+    }
+
+    let mut vec = Vec::new();
+    for _ in 0..file_size_padding {
+        let mut buffer = [0u8];
+        file_reader.read_exact(&mut buffer).unwrap();
+        vec.push(buffer[0]);
+    }
+    decrypt_block(&mut vec, file_size as u32);
+    output_file_writer.write_all(vec.as_slice()).unwrap();
+}
+
+fn decrypt_block(block: &mut Vec<u8>, offset_in_file: u32) {
+    let mut sum = offset_in_file.wrapping_mul(0xCC9E2D51);
+    let mut key = get_key( (offset_in_file & 0xFFFFFFFC).wrapping_mul(0xCC9E2D51));
+    for index in 0..block.len() {
+        let iter = (offset_in_file.wrapping_add( index as u32) & 3) << 3;
+        block[index] ^= (key >> iter) as u8;
+        sum = sum.wrapping_sub(0x3361D2AF);
+        if iter == 24 {
+            key = get_key(sum);
+        }
+    }
+}
+
+fn get_key(sum: u32) -> u32 {
+    let temp1 = sum.rotate_left(15).wrapping_mul(0x1B873593) ^ 0x3F04B286;
+    let temp2 = temp1.rotate_left(13).wrapping_mul(5).wrapping_sub(0x19AB949C);
+    let temp3 = (temp2 ^ 0x40000) >> 16;
+    let temp4 = (temp2 ^ temp3).wrapping_mul(0x85EBCA6B);
+    let temp5 = (temp4 ^ (temp4 >> 13)).wrapping_mul(0xC2B2AE35);
+    temp5 ^ (temp5 >> 16)
+}
