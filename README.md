@@ -1,5 +1,5 @@
 # Cowabunga
-Decryption tool for assets.pie from Teenage Mutant Ninja Turtles: The Cowabunga Collection. This tool was made in its entirety by SowwyItsAnAlt.
+Decryption tool for assets.pie from Teenage Mutant Ninja Turtles: The Cowabunga Collection and Atari 50. This tool was made in its entirety by SowwyItsAnAlt.
 
 ```
 cowabunga 0.1.0
