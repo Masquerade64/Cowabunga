@@ -20,3 +20,7 @@ Options:
   -h, --help       Print help information
   -V, --version    Print version information
 ```
+Example usage:
+```
+cowabunga64.exe -k cowabunga assets.pie assets.zip
+```
