@@ -13,6 +13,7 @@ struct Cli {
 }
 
 #[derive(Clone, ValueEnum, Copy)]
+#[repr(u32)]
 enum Key {
     Cowabunga = 0x3F04B286,
     Atari = 0x2EEA4C8B,
