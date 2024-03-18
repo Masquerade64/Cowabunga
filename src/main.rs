@@ -17,7 +17,8 @@ enum Key {
     Cowabunga = 0x3F04B286,
     Atari = 0x2EEA4C8B,
 	MakingKarateka = 0x920DEA25,
-	GarbagePailKids = 0xAA31713C
+	GarbagePailKids = 0xAA31713C,
+	JeffMinter = 0x34A4C18E
 }
 
 fn main() {
