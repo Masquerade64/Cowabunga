@@ -16,7 +16,7 @@ Arguments:
   <OUTPUT>
 
 Options:
-  -k, --key <KEY>  [default: cowabunga] [possible values: cowabunga, atari, making-karateka, garbage-pail-kids]
+  -k, --key <KEY>  [default: cowabunga] [possible values: cowabunga, atari, making-karateka, garbage-pail-kids, jeff-minter]
   -h, --help       Print help information
   -V, --version    Print version information
 ```
