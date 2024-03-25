@@ -5,6 +5,7 @@ Decryption tool for assets.pie for Digital Eclipse games:
 - Atari 50
 - The Making of Karateka.
 - Garbage Pail Kids: Mad Mike and the Quest for Stale Gum
+- Llamasoft: The Jeff Minter Story
 
 This tool was made in its entirety by SowwyItsAnAlt.
 
