@@ -25,4 +25,5 @@ Options:
 Example usage:
 ```
 cowabunga64.exe -k cowabunga assets.pie assets.zip
+cowabunga64.exe -k cowabunga assets.zip assets.pie
 ```
