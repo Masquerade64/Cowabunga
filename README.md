@@ -2,7 +2,7 @@
 Decryption tool for assets.pie for Digital Eclipse games:
 
 - Teenage Mutant Ninja Turtles: The Cowabunga Collection
-- Atari 50 (+ The Wider World of Atari DLC)
+- Atari 50 (+ The Wider World of Atari DLC and The First Console War DLC)
 - The Making of Karateka.
 - Garbage Pail Kids: Mad Mike and the Quest for Stale Gum
 - Llamasoft: The Jeff Minter Story
