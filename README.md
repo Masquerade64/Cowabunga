@@ -18,7 +18,7 @@ Arguments:
   <OUTPUT>
 
 Options:
-  -k, --key <KEY>  [default: cowabunga] [possible values: cowabunga, atari, atari-dlc1, making-karateka, garbage-pail-kids, jeff-minter, blizzard-arcade]
+  -k, --key <KEY>  [default: cowabunga] [possible values: cowabunga, atari, atari-dlc1, atari-dlc2, making-karateka, garbage-pail-kids, jeff-minter, blizzard-arcade]
   -h, --help       Print help information
   -V, --version    Print version information
 ```
