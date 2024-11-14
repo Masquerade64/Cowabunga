@@ -6,6 +6,7 @@ Decryption tool for assets.pie for Digital Eclipse games:
 - The Making of Karateka.
 - Garbage Pail Kids: Mad Mike and the Quest for Stale Gum
 - Llamasoft: The Jeff Minter Story
+- Teris Forever (same key as Jeff Minter)
 - Blizzard Arcade Collection (music.pie)
 
 This tool was made in its entirety by SowwyItsAnAlt.
