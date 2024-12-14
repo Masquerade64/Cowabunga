@@ -19,10 +19,24 @@ Arguments:
   <OUTPUT>
 
 Options:
-  -k, --key <KEY>  [default: cowabunga] [possible values: cowabunga, atari, atari-dlc1, atari-dlc2, making-karateka, garbage-pail-kids, jeff-minter, blizzard-arcade]
+  -k, --key <KEY>  [default: cowabunga]
   -h, --help       Print help information
   -V, --version    Print version information
 ```
+Possible Keys:
+```
+cowabunga
+atari
+atari-dlc1
+atari-dlc2
+making-karateka
+garbage-pail-kids
+jeff-minter
+blizzard-arcade
+mighty-morphin
+```
+The key for Tetris Forever is the same as `jeff-minter`.
+
 Example usage:
 ```
 cowabunga64.exe -k cowabunga assets.pie assets.zip

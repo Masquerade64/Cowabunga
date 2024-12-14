@@ -22,7 +22,8 @@ enum Key {
 	MakingKarateka  = 0x920DEA25,
 	GarbagePailKids = 0xAA31713C,
 	JeffMinter      = 0x34A4C18E,
-	BlizzardArcade  = 0x93C8C18A
+	BlizzardArcade  = 0x93C8C18A,
+	MightyMorphin   = 0xFA5E893B
 }
 
 fn main() {
