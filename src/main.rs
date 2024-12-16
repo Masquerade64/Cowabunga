@@ -7,7 +7,7 @@ use std::process;
 #[clap(
     author,
     version,
-    about = "Cowabunga64: Decryption tool for Digital Eclipse assets.pie files.",
+    about = "Cowabunga: Decryption tool for Digital Eclipse assets.pie files.",
     after_help = "Example usage:\n  cowabunga64.exe -k cowabunga assets.pie assets.zip\n  cowabunga64.exe -k atari assets.zip assets.pie\n  cowabunga64.exe -c 0xFA5E893B assets.pie assets.zip"
 )]
 struct Cli {
