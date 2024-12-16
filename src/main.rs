@@ -4,15 +4,30 @@ use clap::{Parser, ValueEnum};
 use std::process;
 
 #[derive(Parser)]
-#[clap(author, version, about, long_about = None)]
+#[clap(
+    author,
+    version,
+    about = "Cowabunga64: Decryption tool for Digital Eclipse assets.pie files.",
+    after_help = "Example usage:\n  cowabunga64.exe -k cowabunga assets.pie assets.zip\n  cowabunga64.exe -k atari assets.zip assets.pie\n  cowabunga64.exe -c 0xFA5E893B assets.pie assets.zip"
+)]
 struct Cli {
+    /// Input file to decrypt
+    #[arg(help = "Path to the input .pie file that needs to be decrypted.", value_name = "INPUT_FILE")]
     input: String,
+
+    /// Output file to write the decrypted content
+    #[arg(help = "Path to the output file where the decrypted data will be saved.", value_name = "OUTPUT_FILE")]
     output: String,
+
+    /// Game key for decryption/encryption
     #[arg(short, long, value_enum, default_value_t = Key::Cowabunga)]
     key: Key,
-    #[arg(short = 'c', long = "custom", value_name = "CUSTOM_KEY")]
+
+    /// Use a custom key (in hexadecimal format)
+    #[arg(short = 'c', long = "custom", value_name = "CUSTOM_KEY", help = "Use a custom key (in hexadecimal, e.g., '0xC90CA066')")]
     custom_key: Option<String>,
 }
+
 
 #[derive(Clone, ValueEnum, Copy)]
 #[repr(u32)]
@@ -25,7 +40,7 @@ enum Key {
     GarbagePailKids = 0xAA31713C,
     JeffMinter      = 0x34A4C18E,
     BlizzardArcade  = 0x93C8C18A,
-    MightyMorphin   = 0xFA5E893B
+    MightyMorphin   = 0xFA5E893B,
 }
 
 fn main() {
