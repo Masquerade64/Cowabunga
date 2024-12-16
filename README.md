@@ -19,9 +19,10 @@ Arguments:
   <OUTPUT>
 
 Options:
-  -k, --key <KEY>  [default: cowabunga]
-  -h, --help       Print help information
-  -V, --version    Print version information
+  -k, --key <KEY>  			Game key for decryption/encryption [default: cowabunga]
+  -c, --custom <CUSTOM_KEY> Use a custom key (in hexadecimal, e.g., '0xC90CA066')
+  -h, --help       			Print help information
+  -V, --version    			Print version information
 ```
 Possible Keys:
 ```
@@ -41,4 +42,5 @@ Example usage:
 ```
 cowabunga64.exe -k cowabunga assets.pie assets.zip
 cowabunga64.exe -k cowabunga assets.zip assets.pie
+cowabunga64.exe -c 0xFA5E893B assets.pie assets.zip
 ```
