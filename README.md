@@ -19,10 +19,10 @@ Arguments:
   <OUTPUT>
 
 Options:
-  -k, --key <KEY>  			    Game key for decryption/encryption [default: cowabunga]
+  -k, --key <KEY>  			Game key for decryption/encryption [default: cowabunga]
   -c, --custom <CUSTOM_KEY> Use a custom key (in hexadecimal, e.g., '0xC90CA066')
-  -h, --help       			    Print help information
-  -V, --version    		    	Print version information
+  -h, --help       			Print help information
+  -V, --version    			Print version information
 ```
 Possible Keys:
 ```
