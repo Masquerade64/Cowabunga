@@ -1,7 +1,8 @@
 use std::fs::{self, File};
 use std::io::{BufReader, BufWriter, Read, Write};
-use clap::{Parser, ValueEnum};
+use std::path::Path;
 use std::process;
+use clap::{Parser, ValueEnum};
 
 #[derive(Parser)]
 #[clap(
@@ -28,7 +29,6 @@ struct Cli {
     custom_key: Option<String>,
 }
 
-
 #[derive(Clone, ValueEnum, Copy)]
 #[repr(u32)]
 enum Key {
@@ -46,10 +46,9 @@ enum Key {
 fn main() {
     let cli: Cli = Cli::parse();
 
-    // If a custom key is provided, use it. Otherwise, use the default or chosen enum key.
+    // Determine the decryption key
     let key = match cli.custom_key {
         Some(key_str) => {
-            // Remove the '0x' prefix if present and parse the custom key from a hexadecimal string to u32
             let key_str = key_str.trim_start_matches("0x");  // Remove the "0x" prefix
             match u32::from_str_radix(&key_str, 16) {
                 Ok(parsed_key) => parsed_key,
@@ -67,26 +66,20 @@ fn main() {
 
     let file_size = fs::metadata(&cli.input).unwrap().len();
 
-    // Create a temporary buffer to hold decrypted data
+    // Create the output file writer
+    let output_file = File::create(&cli.output).unwrap();
+    let mut output_file_writer = BufWriter::new(output_file);
+
     let mut buffer = [0; 0x10000];
 
     let file_size_padding = file_size % 0x10000;
     let file_size = file_size - file_size_padding;
 
-    let mut output_file_writer: Option<BufWriter<File>> = None;
-
     for index in (0..file_size).step_by(0x10000) {
         file_reader.read_exact(&mut buffer).unwrap();
         let mut vec = buffer.to_vec();
         decrypt_block(&mut vec, index as u32, key);
-
-        // If we haven't initialized the output writer yet, do it now
-        if output_file_writer.is_none() {
-            let output_file = File::create(&cli.output).unwrap();
-            output_file_writer = Some(BufWriter::new(output_file));
-        }
-
-        output_file_writer.as_mut().unwrap().write_all(vec.as_slice()).unwrap();
+        output_file_writer.write_all(vec.as_slice()).unwrap();
     }
 
     let mut vec = Vec::new();
@@ -96,24 +89,25 @@ fn main() {
         vec.push(buffer[0]);
     }
     decrypt_block(&mut vec, file_size as u32, key);
+    output_file_writer.write_all(vec.as_slice()).unwrap();
 
-    // If we haven't initialized the output writer yet, do it now
-    if output_file_writer.is_none() {
-        let output_file = File::create(&cli.output).unwrap();
-        output_file_writer = Some(BufWriter::new(output_file));
-    }
+    // Determine if the output file is expected to be a ZIP file based on its extension
+    let is_output_zip = Path::new(&cli.output).extension()
+        .map(|ext| ext.eq_ignore_ascii_case("zip"))
+        .unwrap_or(false);
 
-    output_file_writer.as_mut().unwrap().write_all(vec.as_slice()).unwrap();
-
-    // After conversion, check if the output file is a valid ZIP
-    if !is_valid_zip(&cli.output) {
-        // Clean up the output file if it's not a valid ZIP
-        fs::remove_file(&cli.output).unwrap();
+    // Validate the output file if it is expected to be a ZIP file
+    if is_output_zip && !is_valid_zip(&cli.output) {
+        fs::remove_file(&cli.output).unwrap(); // Clean up the invalid output file
         eprintln!("Error: The output file '{}' is not a valid ZIP file.", cli.output);
         process::exit(1);  // Exit with error code 1
     }
 
-    println!("The output file '{}' was successfully converted and is a valid ZIP file.", cli.output);
+    if is_output_zip {
+        println!("The output file '{}' was successfully converted and is a valid ZIP file.", cli.output);
+    } else {
+        println!("The output file '{}' was successfully converted.", cli.output);
+    }
 }
 
 /// Checks if a file is a valid ZIP by looking for the "PK" header.
