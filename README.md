@@ -35,6 +35,7 @@ garbage-pail-kids
 jeff-minter
 blizzard-arcade
 mighty-morphin
+yu-gi-oh
 ```
 The key for Tetris Forever is the same as `jeff-minter`.
 
