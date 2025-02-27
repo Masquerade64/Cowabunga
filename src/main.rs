@@ -41,6 +41,7 @@ enum Key {
     JeffMinter      = 0x34A4C18E,
     BlizzardArcade  = 0x93C8C18A,
     MightyMorphin   = 0xFA5E893B,
+	YuGiOh          = 0x55D7F83B,
 }
 
 fn main() {
