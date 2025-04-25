@@ -8,6 +8,8 @@ Decryption tool for assets.pie for Digital Eclipse games:
 - Llamasoft: The Jeff Minter Story
 - Teris Forever (same key as Jeff Minter)
 - Blizzard Arcade Collection (music.pie)
+- Mighty Morphin Power Rangers: Rita's Rewind
+- Yu-Gi-Oh! EARLY DAYS COLLECTION
 
 This tool was made in its entirety by SowwyItsAnAlt.
 
