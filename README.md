@@ -10,6 +10,7 @@ Decryption tool for assets.pie for Digital Eclipse games:
 - Blizzard Arcade Collection (music.pie)
 - Mighty Morphin Power Rangers: Rita's Rewind
 - Yu-Gi-Oh! EARLY DAYS COLLECTION
+- Mortal Kombat Legacy Collection
 
 This tool was made in its entirety by SowwyItsAnAlt.
 
