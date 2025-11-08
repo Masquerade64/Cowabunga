@@ -42,6 +42,7 @@ enum Key {
     BlizzardArcade  = 0x93C8C18A,
     MightyMorphin   = 0xFA5E893B,
 	YuGiOh          = 0x55D7F83B,
+	MortalKombatLC  = 0x41D3AAA6,
 }
 
 fn main() {

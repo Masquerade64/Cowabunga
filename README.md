@@ -38,6 +38,7 @@ jeff-minter
 blizzard-arcade
 mighty-morphin
 yu-gi-oh
+mortal-kombat-lc
 ```
 The key for Tetris Forever is the same as `jeff-minter`.
 
