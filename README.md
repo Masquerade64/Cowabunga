@@ -33,6 +33,7 @@ cowabunga
 atari
 atari-dlc1
 atari-dlc2
+atari-dlc3
 making-karateka
 garbage-pail-kids
 jeff-minter

@@ -1,6 +1,6 @@
 [package]
 name = "cowabunga"
-version = "1.0.3"
+version = "1.0.4"
 edition = "2021"
 license = "MIT OR Apache-2.0"
 
@@ -16,5 +16,5 @@ winres = "0.1.12"
 OriginalFilename = "cowabunga.exe"
 LegalCopyright = "Copyright © sowwyitsanalt 2022"
 ProductName = "COWABUNGA"
-ProductVersion = "1.0.0.3"
+ProductVersion = "1.0.0.4"
 FileDescription = "COWABUNGA"
