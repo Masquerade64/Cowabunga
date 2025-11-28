@@ -44,6 +44,7 @@ enum Key {
     MightyMorphin   = 0xFA5E893B,
 	YuGiOh          = 0x55D7F83B,
 	MortalKombatLC  = 0x41D3AAA6,
+	GoldenTee       = 0x2E8D9A77,
 }
 
 fn main() {

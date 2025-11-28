@@ -2,7 +2,7 @@
 Decryption tool for assets.pie for Digital Eclipse games:
 
 - Teenage Mutant Ninja Turtles: The Cowabunga Collection
-- Atari 50 (+ The Wider World of Atari DLC and The First Console War DLC)
+- Atari 50 (+ DLCs)
 - The Making of Karateka.
 - Garbage Pail Kids: Mad Mike and the Quest for Stale Gum
 - Llamasoft: The Jeff Minter Story
@@ -11,6 +11,7 @@ Decryption tool for assets.pie for Digital Eclipse games:
 - Mighty Morphin Power Rangers: Rita's Rewind
 - Yu-Gi-Oh! EARLY DAYS COLLECTION
 - Mortal Kombat Legacy Collection
+- Golden Tee Arcade Classics
 
 This tool was made in its entirety by SowwyItsAnAlt.
 
@@ -41,6 +42,7 @@ blizzard-arcade
 mighty-morphin
 yu-gi-oh
 mortal-kombat-lc
+golden-tee
 ```
 The key for Tetris Forever is the same as `jeff-minter`.
 
