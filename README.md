@@ -12,6 +12,7 @@ Decryption tool for assets.pie for Digital Eclipse games:
 - Yu-Gi-Oh! EARLY DAYS COLLECTION
 - Mortal Kombat Legacy Collection
 - Golden Tee Arcade Classics
+- Rayman: 30th Anniversary Edition 
 
 This tool was made in its entirety by SowwyItsAnAlt.
 
@@ -43,6 +44,7 @@ mighty-morphin
 yu-gi-oh
 mortal-kombat-lc
 golden-tee
+rayman30th
 ```
 The key for Tetris Forever is the same as `jeff-minter`.
 

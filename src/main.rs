@@ -45,6 +45,7 @@ enum Key {
 	YuGiOh          = 0x55D7F83B,
 	MortalKombatLC  = 0x41D3AAA6,
 	GoldenTee       = 0x2E8D9A77,
+	Rayman30th      = 0x64DA7B23,
 }
 
 fn main() {
