@@ -13,6 +13,7 @@ Decryption tool for assets.pie for Digital Eclipse games:
 - Mortal Kombat Legacy Collection
 - Golden Tee Arcade Classics
 - Rayman: 30th Anniversary Edition 
+- Disney Pixar Toy Story Retro Roundup
 
 This tool was made in its entirety by SowwyItsAnAlt.
 
