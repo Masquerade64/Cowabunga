@@ -46,8 +46,10 @@ yu-gi-oh
 mortal-kombat-lc
 golden-tee
 rayman30th
+toy-story-pancake
 ```
 The key for Tetris Forever is the same as `jeff-minter`.
+The key for Disney Pixar Toy Story Retro Roundup `assets.pie` is the same as `golden-tee`.
 
 Example usage:
 ```
