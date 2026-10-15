@@ -46,6 +46,7 @@ enum Key {
 	MortalKombatLC  = 0x41D3AAA6,
 	GoldenTee       = 0x2E8D9A77,
 	Rayman30th      = 0x64DA7B23,
+	ToyStoryPancake = 0x8675309A,
 }
 
 fn main() {
